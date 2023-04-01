@@ -2,6 +2,7 @@
 
 [English](README.md) |  简体中文
 
+***
 **「镭射枪」** 旨在使你的 **友华 WR330/WR1200JS** (无线) 路由器更好用。
 
 复刻 (Fork) 自 [KevinMX/Railgun](https://github.com/KevinMX/Railgun)。
