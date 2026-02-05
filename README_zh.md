@@ -1,6 +1,14 @@
-# Project Railgun ([English](README.md))
+# Project Lasergun
 
-为您的（无线）路由器精心打造的 **「超电磁炮」**。
+[English](README.md) |  简体中文
+
+> “歼灭者、征服者，乃至那威震寰宇的死亡打击导弹发射器，在亿万激光枪齐声咆哮、倾泻炼狱之火的伟力面前，亦尽皆黯然失色。”\
+> —— 马卡比安第 263 禁卫军团 加里乌斯·塞普图斯上尉
+
+***
+**镭射枪** 旨在使你的 （无线） 路由器更好用。
+
+复刻 (Fork) 自 [KevinMX/Railgun](https://github.com/KevinMX/Railgun)。
 
 ***
 
@@ -8,43 +16,19 @@
 
 前往 release / 发布页，或者 Actions CI 中自行选择所需固件。
 
+要使用此项目，**你需要在 Bootloader（opboot、pbboot 或其他）中进行一次干净刷写，而不是通过 LuCI WebUI 进行升级。并且你将丢失所有配置。请务必做好备份。**
+
 ***
 
 ### 当前支持设备
 
 目前已支持 & 已测试
 
-| 目标平台      | 设备型号                  |
-|---------------|---------------------------|
-| x86_64        | generic (仅支持 EFI 启动) |
-| msm89xx       | ufi003                    |
-| mt7981/apbase | 捷稀 / JCG Q30 Pro        |
+| CPU 架构        | 设备名称                                                           |
+|---------------|------------------------------------------------------------------|
+| ipq40xx       | [P&W R619AC](https://openwrt.org/toh/p_w/r619ac)                 |
 
-施工中
-
-| 目标平台      | 设备型号                      |
-| ------------- | ----------------------------- |
-| mt7981        | 所有设备                      |
-| mt7981/apbase | 除 JCG Q30 Pro 之外的所有设备 |
-
-已停止支持。请考虑使用 [ImmortalWrt](https://firmware-selector.immortalwrt.org/)（除 UFI003）   
-
-| 目标平台      | 设备型号                                                                    |
-|---------------|---------------------------------------------------------------------------|
-| ramips/mt7621 | [newifi 3 / newifi D2 / 新路由 3](https://openwrt.org/toh/lenovo/newifi_d2) |
-| ramips/mt7621 | [Phicomm K2P / 斐讯 K2P](https://openwrt.org/toh/phicomm/k2p_ke2p)          |
-| ipq40xx       | [P&W R619AC / 竞斗云](https://openwrt.org/toh/p_w/r619ac)                   |
-| mt7981        | 所有设备                                                                    |
-| mt7981/apbase | 除 JCG Q30 Pro 之外的所有设备                                               |
-
-（手头没有设备，暂时无法测试。欢迎提建议/反馈 bug。）
-
-需要修复，目前不可用~~（咕咕咕~~
-
-| 目标平台 | 设备型号    |
-|----------|-------------|
-| mt7981   | All devices |
-| msm89xx  | ufi003      |
+（欢迎提建议/反馈 bug。）
 
 ***
 
@@ -52,34 +36,21 @@
 
 | 目标平台                        | LuCI/LAN 默认 IP 地址 | 用户名 | 密码       | 源码仓库                                                                    |
 | ------------------------------- | --------------------- | ------ | ---------- | --------------------------------------------------------------------------- |
-| mt7981/apbase                   | `10.0.0.1`            | `root` | `password` | [hanwckf/immortalwrt-mt798x](https://github.com/hanwckf/immortalwrt-mt798x) |
-| (EOL) mt7981                    | `10.0.0.1`            | `root` | `password` | [hanwckf/immortalwrt-mt798x](https://github.com/hanwckf/immortalwrt-mt798x) |
-| (EOL) x86_64                    | `10.0.0.1`            | `root` | `password` | [coolsnowwolf/lede](https://github.com/coolsnowwolf/lede)                   |
-| (EOL) ipq40xx                   | `10.0.0.1`            | `root` | `password` | [coolsnowwolf/lede](https://github.com/coolsnowwolf/lede)                   |
-| (EOL) msm89xx                   | `10.0.0.1`            | `root` | `password` | [HandsomeMod/HandsomeMod](https://github.com/HandsomeMod/HandsomeMod)       |
-| (EOL) ramips/mt7621 (newifi_d2) | `192.168.2.1`         | `root` | `password` | [padavanonly/immortalwrt](https://github.com/padavanonly/immortalwrt)       |
-| (EOL) ramips/mt7621 (k2p)       | `192.168.2.1`         | `root` | `password` | [coolsnowwolf/lede](https://github.com/coolsnowwolf/lede)                   |
+|ipq40xx                   | `192.168.1.1`          | `root`   | `password` | [immortalwrt/immortalwrt](https://github.com/immortalwrt/immortalwrt)
 
-
-由于这个固件实际上也是我日用的固件，为了满足我的需求，可能会包含一些不太能上台面的小 hack & 小魔改，介意慎用。
+> 由于这个固件实际上也是我日用的固件，为了满足我的需求，可能会包含一些不太能上台面的小 hack & 小魔改，介意慎用。
 
 #### 推荐使用的 Bootloader
 
 | 目标平台                        | 发布地址或源码仓库                                                                                               |
 | ------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| mt7981/apbase                   | [天灵修改版](https://drive.wrt.moe/uboot/mediatek/) 或 [hanwckf/bl-mt798x](https://github.com/hanwckf/bl-mt798x) |
-| (EOL) mt7981                    | [天灵修改版](https://drive.wrt.moe/uboot/mediatek/) 或 [hanwckf/bl-mt798x](https://github.com/hanwckf/bl-mt798x) |
-| (EOL) x86_64                    | N/A                                                                                                              |
-| (EOL) ipq40xx                   | [opboot](https://github.com/ericclose/r619ac-opboot-and-openwrt-flashing) 或主线 U-Boot                          |
-| (EOL) msm89xx                   | N/A                                                                                                              |
-| (EOL) ramips/mt7621 (newifi_d2) | [Breed](https://breed.hackpascal.net/breed-mt7621-newifi-d2.bin)                                                 |
-| (EOL) ramips/mt7621 (k2p)       | [Breed](https://breed.hackpascal.net/breed-mt7621-phicomm-k2p.bin)                                               |
+| ipq40xx                   | [opboot](https://github.com/ericclose/r619ac-opboot-and-openwrt-flashing) 或主线 U-Boot                          |
 
 ***
 
 ### 如果刷完固件翻车了怎么办...
 
-如果您认为我的构建中存在问题，欢迎提 [issue](https://github.com/KevinMX/Railgun/issues/new/choose)。
+如果您认为我的构建中存在问题，欢迎提 [issue](https://github.com/SuperLangdon/Lasergun/issues/new/choose)。
 
 我个人不喜欢搞什么烦人的模板，那玩意更大程度上是开发者自己的免责声明罢了。记得带上一些必须信息即可，例如，完整的复现步骤、必要的日志等。能给多少给多少，不知道该提什么，直接问。
 
@@ -91,22 +62,28 @@
 
 ### 致谢
 
-原作 · [**P3TERX**](https://p3terx.com)/[Actions-OpenWrt](https://github.com/P3TERX/Actions-OpenWrt)
+原作者
+
+- [P3TERX](https://p3terx.com)/[Actions-OpenWrt](https://github.com/P3TERX/Actions-OpenWrt)
+- [KevinMX](https://mary.kevinmx.top/)/[Railgun](https://github.com/KevinMX/Railgun)
 
 上游项目
 
-- [Lean's LEDE source](https://github.com/coolsnowwolf/lede)
-- [padavanonly's ImmortalWrt source](https://github.com/padavanonly/immortalwrt)
-- [HandsomeMod](https://github.com/HandsomeMod/HandsomeMod)
-- [hanwckf's immortalwrt-mt798x](https://github.com/hanwckf/immortalwrt-mt798x)
+- [ImmortalWrt](https://github.com/immortalwrt/immortalwrt)
+
+LuCI 插件
+
+- [0x676e67/luci-theme-design](https://github.com/0x676e67/luci-theme-design)
+- [sbwml/luci-app-mosdns](https://github.com/sbwml/luci-app-mosdns)
+- [chenmozhijin/turboacc](https://github.com/chenmozhijin/turboacc)
 
 Infra & CI
 
 - [GitHub Actions CI](https://github.com/features/actions)
 
-特别鸣谢
+AI 辅助
 
-- [237176256 @ right.com.cn](https://www.right.com.cn/forum/space-uid-364126.html) a.k.a [MeIsReallyBa](https://github.com/MeIsReallyBa) (指导开启 MT7615 的 802.11 k/v/r)
+- [Gemini](https://gemini.google.com)
 
 以及更多没有提到的贡献者...
 
@@ -114,4 +91,4 @@ Infra & CI
 
 ### 许可证
 
-[WTFNMF](https://github.com/adversary-org/wtfnmf) © [**Kevin.MX**](https://mary.kevinmx.top)
+[WTFNMF](https://github.com/adversary-org/wtfnmf) © [**SuperLangdon**](https://langdon.one)
