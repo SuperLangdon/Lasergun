@@ -1,8 +1,9 @@
 #!/bin/bash
 
-# Enable helloworld
-sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
-
-# Add passwall
-echo 'src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages.git;main' >> feeds.conf.default
-echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall.git;main' >> feeds.conf.default    
+# Add mosdns
+echo 'src-git mosdns https://github.com/sbwml/luci-app-mosdns;v5' >> feeds.conf.default
+# Add design theme and config plugin
+echo 'src-git designtheme https://github.com/0x676e67/luci-theme-design;main' >> feeds.conf.default
+echo 'src-git designconfig https://github.com/0x676e67/luci-app-design-config;master' >> feeds.conf.default
+# Add turboacc
+echo 'src-git turboacc https://github.com/chenmozhijin/turboacc;luci' >> feeds.conf.default
