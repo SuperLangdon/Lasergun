@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# Add mosdns
-find ./ | grep Makefile | grep mosdns | xargs rm -f
+# Add luci-app-mosdns
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 
 # Add turboacc without nft-fullcone
