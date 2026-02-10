@@ -7,7 +7,7 @@ English |  [简体中文](README_zh.md)
 
 ***
 
-*Lasergun* aims to make your (wireless) router more user-friendly.
+*Lasergun* is a firmware built on ImmortalWrt that largely adheres to the project's best practices, aims to make your (wireless) router more user-friendly.
 
 Forked from [KevinMX/Railgun](https://github.com/KevinMX/Railgun).
 
@@ -39,8 +39,6 @@ Currently supported & Tested
 | ------------------------------- | ------------------- | -------- | ---------- | --------------------------------------------------------------------------- |
 |ipq40xx                   | `192.168.1.1`          | `root`   | `password` | [immortalwrt/immortalwrt](https://github.com/immortalwrt/immortalwrt)                   |
 
-> Since I daily drive this firmware as well, it might contain some dirty & ugly hacks. If you feel uncomfortable about this, do not use this firmware.
-
 #### Recommended Bootloader
 
 | Target                          | Release URL or source repo                                                                                                   |
@@ -51,11 +49,13 @@ Currently supported & Tested
 
 ### If anything goes wrong
 
+You can start by checking out the [immortalwrt/user-FAQ](https://github.com/immortalwrt/user-FAQ).
+
 If you think there's something wrong in my builds, feel free to create an [issue](https://github.com/SuperLangdon/Lasergun/issues/new/choose).
 
-I don't like those annoying issue templates, those are disclaimers rather than rules. Just remember to leave enough information (full reproduce steps, necessary logs, etc) here. Give us as much info as you can. If you don't know what to provide, JUST ASK.
+This project does not use issue templates, but when reporting a problem, please be sure to include essential information such as complete reproduction steps, relevant logs, and other helpful details. Provide as much information as possible; if you don't know what to provide, JUST ASK.
 
-Nobody like guess your problem and come up with a solution out of no where :)
+Naturally, without sufficient reference information, troubleshooting and identifying the issue will become considerably more difficult.
 
 If you think the issue is from upstream projects, please open issues there instead.
 
@@ -74,9 +74,7 @@ Upstream projects
 
 LuCI Plugin
 
-- [0x676e67/luci-theme-design](https://github.com/0x676e67/luci-theme-design)
 - [sbwml/luci-app-mosdns](https://github.com/sbwml/luci-app-mosdns)
-- [chenmozhijin/turboacc](https://github.com/chenmozhijin/turboacc)
 
 Infra & CI
 
@@ -84,7 +82,7 @@ Infra & CI
 
 AI Copilot
 
-- [Gemini](https://gemini.google.com)
+- [ChatGPT](https://chatgpt.com)
 
 And more...
 

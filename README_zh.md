@@ -2,11 +2,11 @@
 
 [English](README.md) |  简体中文
 
-> “歼灭者、征服者，乃至那威震寰宇的死亡打击导弹发射器，在亿万激光枪齐声咆哮、倾泻炼狱之火的伟力面前，亦尽皆黯然失色。”\
-> —— 马卡比安第 263 禁卫军团 加里乌斯·塞普图斯上尉
+> "The Demolisher, the Vanquisher, even the mighty Deathstrike Missile Launcher pale in comparison to the sheer firepower of trillions of lasguns unleashing hell in unison."\
+> -- Captain Garius Septus of the 263rd Maccabian Janissaries
 
 ***
-**镭射枪** 旨在使你的 （无线） 路由器更好用。
+**Lasergun / 镭射枪** 是一个基于基于 [ImmortalWrt](https://github.com/immortalwrt/immortalwrt) 构建的路由器固件，并**基本遵循**了该项目的最佳实践，旨在让你的（无线）路由器更加易用。
 
 复刻 (Fork) 自 [KevinMX/Railgun](https://github.com/KevinMX/Railgun)。
 
@@ -16,7 +16,9 @@
 
 前往 release / 发布页，或者 Actions CI 中自行选择所需固件。
 
-要使用此项目，**你需要在 Bootloader（opboot、pbboot 或其他）中进行一次干净刷写，而不是通过 LuCI WebUI 进行升级。并且你将丢失所有配置。请务必做好备份。**
+要使用此项目，**你需要在支持的 Bootloader（opboot、pbboot 或其他）中进行一次干净刷写，而非通过 LuCI WebUI 升级。此操作将清除所有现有配置，请务必提前做好备份。**
+
+
 
 ***
 
@@ -32,13 +34,11 @@
 
 ***
 
-### 其他信息
+### 固件信息
 
 | 目标平台                        | LuCI/LAN 默认 IP 地址 | 用户名 | 密码       | 源码仓库                                                                    |
 | ------------------------------- | --------------------- | ------ | ---------- | --------------------------------------------------------------------------- |
 |ipq40xx                   | `192.168.1.1`          | `root`   | `password` | [immortalwrt/immortalwrt](https://github.com/immortalwrt/immortalwrt)
-
-> 由于这个固件实际上也是我日用的固件，为了满足我的需求，可能会包含一些不太能上台面的小 hack & 小魔改，介意慎用。
 
 #### 推荐使用的 Bootloader
 
@@ -48,15 +48,17 @@
 
 ***
 
-### 如果刷完固件翻车了怎么办...
+### 有任何问题？
+
+您可以先看看 [immortalwrt/user-FAQ](https://github.com/immortalwrt/user-FAQ)。
 
 如果您认为我的构建中存在问题，欢迎提 [issue](https://github.com/SuperLangdon/Lasergun/issues/new/choose)。
 
-我个人不喜欢搞什么烦人的模板，那玩意更大程度上是开发者自己的免责声明罢了。记得带上一些必须信息即可，例如，完整的复现步骤、必要的日志等。能给多少给多少，不知道该提什么，直接问。
+本项目不设issue模板，但如果您要提问，请务必提供必要信息，如完整的复现步骤、相关日志等。能提供的信息尽量附上；若不确定该包含哪些内容，也欢迎直接询问。
 
-当然，啥也没有的话，咱就只能靠算命解决问题喽。
+当然，若缺少可供参考的信息，问题的排查与定位将会变得困难。
 
-如果您认为是上游项目存在问题，请给相关项目提 issue。
+如果您认为问题源于上游项目，建议直接向对应项目提交 issue。
 
 ***
 
@@ -69,13 +71,12 @@
 
 上游项目
 
-- [ImmortalWrt](https://github.com/immortalwrt/immortalwrt)
+- [immortalwrt/immortalwrt](https://github.com/immortalwrt/immortalwrt)
 
 LuCI 插件
 
-- [0x676e67/luci-theme-design](https://github.com/0x676e67/luci-theme-design)
+
 - [sbwml/luci-app-mosdns](https://github.com/sbwml/luci-app-mosdns)
-- [chenmozhijin/turboacc](https://github.com/chenmozhijin/turboacc)
 
 Infra & CI
 
@@ -83,7 +84,7 @@ Infra & CI
 
 AI 辅助
 
-- [Gemini](https://gemini.google.com)
+- [ChatGPT](https://chatgpt.com)
 
 以及更多没有提到的贡献者...
 
